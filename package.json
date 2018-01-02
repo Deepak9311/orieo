@@ -1,0 +1,25 @@
+{
+  "name": "rulepega",
+  "version": "1.0.0",
+  "description": "forum",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.1.0",
+    "mongodb": "*",
+    "mongoose": "*",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

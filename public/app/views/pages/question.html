@@ -1,0 +1,51 @@
+
+<br><br><br>
+<div class="container" ng-controller="qsnCtrl">
+  
+    <form class="form" name ="myForm">
+
+              <div class="row">
+                <div class="col-sm-8">
+                  <h3 style="margin-left:  30px;">Ask Question</h3><br>
+                    <div class="panel panel-default" style="margin-left:  30px;">
+                       <div class="panel-heading">
+                         <h4 class="panel-title">Question</h4>
+                          </div>
+                       <div class="panel-body">
+                          <p>Enter your question. For best results,be as specific as possible.</p>
+                          <div class="form-group">
+                          <input type="text" id="question" class="form-control form-control-sm" name="questions" ng-model="question.qsnData.questions" ng-trim="false" maxlength="115" /><br>
+                            <span>{{115-question.qsnData.questions.length}} characters are left</span>
+                       </div>
+                     </div>
+                    </div>
+               
+<p><br></p>
+            <div class="row">
+                 <div class="panel panel-default" style="margin-left:  45px;">
+                   <div class="panel-heading">
+                      <h4 class="panel-title">Question Details</h4>
+                   </div>
+                     <div class="panel-body">
+                       <p>Provide details and background information. The more details, the easier it is for others to solve and provide you with a quicker answer.</p>
+                       <div class="form-group">
+                          <textarea class="form-control" id="Textarea1" rows="12" name="details" ng-model="question.qsnData.details"></textarea>
+                        </div>
+                         <p>Add Tags to your Question.Effective tagging helps members find your question easily. Add keywords or phrases that are relevant to your question so members can easily understand what your question is about.</p>
+                           <input class="form-control form-control-sm" type="text" name="tags" placeholder="" ng-model="question.qsnData.tags">
+                              <p>Use commas to separate the tags.</p>
+                      </div>
+                   </div>
+                 </div>
+
+<p><br></p>
+            <div class="row">
+              <div class="col-sm-4">
+                <button  class="btn btn-primary" style="margin-left:  30px;" ng-click="question.quesn(qsnData)">Go</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </form>
+    </div>
+<br><br><br>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/log.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/animate.css"> -->
+    
+    <!-- Main Angular Files -->
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <!-- <script src="assets/js/angular-animate.js"></script> -->
+    <!-- <script src="assets/js/angular-ui-router.js"></script> -->
+    
+    <!-- Angular Controller Files -->
+    <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/qsnCtrl.js"></script>
+    
+    <!-- Angular Services Files -->
+    <script src="app/services/userServices.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/otherServices.js"></script>
+    
+    <!-- Angular Config Routes -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+ 
+    <title>Home</title>
+
+<!-- ng-show="main.load" ng-cloak -->
+    
+  </head>
+
+  <body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home" style="color: #EEF1F7">RulePega</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="search" ng-model="search">
+        </div>
+        <button ng-click="submit()" class="btn btn-danger">Search</button>
+      </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a ng-show="!main.isLoggedIn" href="/login">Login</a></li>
+            <li><a ng-show="!main.isLoggedIn" href="/register">Register</a></li>
+            <li><a ng-show="main.isLoggedIn" href="#" ng-click="main.logout()">Logout</a></li>
+            <li><a ng-show="main.isLoggedIn" href="/profile">Hello {{main.username}}</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+      <div ng-view></div>    
+
+    </div> <!-- /container -->
+
+    <div class="footer-copyright" style="font-size: 13px">
+        <div class="container-fluid">
+            Disclaimer : This site does not have any affiliation with Pega Systems and does not gurantee accuracy of information and views expressed here by the members.
+
+        </div>
+    </div>
+
+</footer>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+   <script src="assets/js/bootstrap.js"></script>
+   <script src="https://use.fontawesome.com/3c7a12b211.js"></script>
+    
+  </body>
+</html>
+
+<!-- ng-show="main.isLoggedIn" -->

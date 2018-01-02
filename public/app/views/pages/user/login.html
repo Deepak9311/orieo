@@ -1,0 +1,65 @@
+<br><br><br><br><br><br><br>
+<div class="container" >
+            <div class="row">
+              <div class="col-md-6">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Login</h4></div>
+                    <div class="panel-body">
+                       <div class="social-buttons">
+                        <a ng-click="main.facebook();" class="btn btn-primary"><!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->Facebook</a>
+                        <a href="#" class="btn btn-info"><!-- <i class="fa fa-twitter"></i> -->Twitter</a>
+                        <a href="#" class="btn btn-danger"><!-- <i class="fa fa-google"></i> -->Google</a>
+                      </div>
+                                or
+
+                      <form name ="form">
+                         <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+                          <label class="sr-only" for="">Email address</label>
+                          <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                             <input type="email" class="form-control" name="email" placeholder="Email address" ng-model="main.loginData.email" required />
+                            </div>
+                         <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email Required</span>
+                        </div>
+                           
+                      <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                          <label class="sr-only" for="">Password</label>
+                          <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                       <input type="password" class="form-control" name="password" placeholder="Password" ng-model="main.loginData.password" required />
+                     </div>
+                     <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password Required</span>
+                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                       <button  ng-click="main.login(loginData)" ng-disabled="form.$invalid" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    
+                     <div class="card-footer text-center" >
+                     New here ? <a href="/register"><b>Join Us</b></a>
+                     </div>
+                 </form>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <p><br><br><br><br></p>
+     <div class="jumbotron text-center" ng-show="main.loading">
+  <span class="glyphicon glyphicon-repeat spinner"></span>
+  <p>Loading...</p>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="main.successMsg">
+  <div class="alert alert-success">{{main.successMsg}}</div>
+</div>
+<br>
+
+<div class="row show-hide-message" ng-show="main.errorMsg">
+  <div class="alert alert-danger">{{main.errorMsg}}</div>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="facebook.errorMsg">
+  <div class="alert alert-danger">{{facebook.errorMsg}}</div>
+</div>
